@@ -1,1 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Estratégica — Bem Estar Podologia | YM Marketing & Negócios</title>
+<style>
+  :root {
+    --navy: #0f2340;
+    --navy-mid: #1a3a5c;
+    --navy-light: #e8f0f9;
+    --green: #2d7a5f;
+    --green-light: #e6f4ef;
+    --green-mid: #3a9b77;
+    --gold: #c49a2e;
+    --text: #1a1a2e;
+    --text-mid: #4a5568;
+    --text-light: #718096;
+    --border: #e2e8f0;
+    --white: #ffffff;
+    --bg: #f7f9fc;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  h1, h2, h3, h4 { font-family: 'Georgia', serif; font-weight: normal; }
+  .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
 
+  /* HEADER */
+  .header { background: var(--navy); padding: 3rem 1.5rem 2.5rem; text-align: center; }
+  .header-brand { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2rem; }
+  .header-tag { display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; background: rgba(45,122,95,0.3); color: #7dd3b4; border: 1px solid rgba(45,122,95,0.5); padding: 5px 14px; border-radius: 20px; margin-bottom: 1.25rem; }
+  .header h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); color: #ffffff; line-height: 1.3; margin-bottom: .75rem; letter-spacing: -0.5px; }
+  .header-sub { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .9rem; color: rgba(255,255,255,0.6); max-width: 560px; margin: 0 auto 2rem; line-height: 1.6; }
+  .header-meta { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .header-meta-item { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); display: flex; align-items: center; gap: .35rem; }
+  .header-meta-item span { color: rgba(255,255,255,0.7); font-weight: 600; }
+
+  /* SECTION */
+  .section { padding: 3rem 0; }
+  .section-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); margin-bottom: .6rem; }
+  .section h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); color: var(--navy); margin-bottom: .5rem; letter-spacing: -0.3px; }
+  .section-intro { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .88rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 2rem; max-width: 560px; }
+  .bg-white { background: var(--white); }
+  .bg-gray { background: var(--bg); }
+
+  /* FINDINGS */
+  .findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .finding-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.1rem 1.25rem; display: flex; gap: .75rem; align-items: flex-start; }
+  .fi-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .fi-amber { background: #fff8e1; }
+  .fi-green { background: var(--green-light); }
+  .finding-card p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .83rem; color: var(--text-mid); line-height: 1.55; }
+  .finding-card strong { color: var(--text); font-weight: 600; }
+
+  /* BRIDGE */
+  .bridge { background: var(--navy); border-radius: var(--radius); padding: 1.75rem 2rem; margin-bottom: 2rem; }
+  .bridge p { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.7; font-style: italic; }
+  .bridge p em { color: #7dd3b4; font-style: normal; }
+
+  /* SERVICE CARDS */
+  .service-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 1.25rem; }
+  .service-header { padding: 1.5rem 1.75rem 1.25rem; border-bottom: 1px solid var(--border); }
+  .service-num { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: .4rem; }
+  .service-header h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: .3rem; }
+  .service-hook { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .83rem; color: var(--text-light); font-style: italic; }
+  .service-body { display: grid; grid-template-columns: 1fr 1fr; }
+  .service-col { padding: 1.25rem 1.75rem; }
+  .service-col + .service-col { border-left: 1px solid var(--border); background: var(--bg); }
+  .service-col-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: .75rem; }
+  .service-col ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+  .service-col ul li { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .82rem; color: var(--text-mid); padding-left: 1rem; position: relative; line-height: 1.4; }
+  .service-col ul li::before { content: '→'; position: absolute; left: 0; color: var(--green); font-size: .8rem; }
+  .benefit-item { display: flex; align-items: flex-start; gap: .5rem; margin-bottom: .5rem; }
+  .benefit-check { width: 18px; height: 18px; border-radius: 50%; background: var(--green-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .benefit-check svg { width: 10px; height: 10px; }
+  .benefit-item p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .82rem; color: var(--text-mid); line-height: 1.4; }
+
+  /* SYNERGY */
+  .synergy-row { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: .5rem; margin-bottom: 1.5rem; }
+  .synergy-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.1rem 1rem; text-align: center; }
+  .synergy-card .syn-icon { font-size: 1.3rem; margin-bottom: .4rem; }
+  .synergy-card h4 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .85rem; font-weight: 700; color: var(--navy); margin-bottom: .2rem; }
+  .synergy-card p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .75rem; color: var(--text-light); }
+  .syn-arrow { font-size: 1.2rem; color: var(--green); text-align: center; }
+  .synergy-insight { background: var(--navy-light); border: 1px solid #c5d8f0; border-radius: var(--radius-sm); padding: 1rem 1.25rem; }
+  .synergy-insight p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .87rem; color: var(--navy-mid); line-height: 1.6; font-style: italic; }
+
+  /* OFFER */
+  .offer-block { background: var(--navy); border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+  .offer-block::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; border-radius: 50%; background: rgba(45,122,95,0.1); }
+  .offer-block::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 150px; height: 150px; border-radius: 50%; background: rgba(196,154,46,0.08); }
+  .offer-tag { display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; background: rgba(45,122,95,0.3); color: #7dd3b4; border: 1px solid rgba(45,122,95,0.5); padding: 5px 14px; border-radius: 20px; margin-bottom: 1.25rem; position: relative; z-index: 1; }
+  .offer-block h2 { font-size: clamp(1.2rem, 3vw, 1.55rem); color: #ffffff; margin-bottom: .75rem; position: relative; z-index: 1; }
+  .offer-block > p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .87rem; color: rgba(255,255,255,0.58); margin-bottom: 2rem; max-width: 460px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; line-height: 1.6; }
+  .price-display { position: relative; z-index: 1; margin-bottom: 1.5rem; }
+  .price-original { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .88rem; color: rgba(255,255,255,0.38); text-decoration: line-through; margin-bottom: .25rem; }
+  .price-main { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(2.4rem, 6vw, 3rem); color: #ffffff; letter-spacing: -2px; line-height: 1.1; margin-bottom: .4rem; }
+  .price-saving { display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .78rem; font-weight: 700; background: var(--gold); color: #fff; padding: 4px 12px; border-radius: 20px; }
+  .offer-includes { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin: 1.75rem auto; position: relative; z-index: 1; text-align: left; max-width: 460px; }
+  .offer-inc-item { display: flex; align-items: center; gap: .5rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .8rem; color: rgba(255,255,255,0.62); }
+  .offer-inc-item svg { flex-shrink: 0; }
+  .cta-btn { display: inline-block; position: relative; z-index: 1; background: var(--green-mid); color: #ffffff; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .95rem; font-weight: 600; padding: .9rem 2.5rem; border-radius: 8px; }
+  .cta-sub { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .73rem; color: rgba(255,255,255,0.32); margin-top: .75rem; position: relative; z-index: 1; }
+
+  /* RESULTS */
+  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; }
+  .result-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.1rem 1.25rem; }
+  .result-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); margin-bottom: .75rem; }
+  .result-card h4 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .85rem; font-weight: 600; color: var(--navy); margin-bottom: .3rem; }
+  .result-card p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .8rem; color: var(--text-light); line-height: 1.5; }
+
+  /* CTA FINAL */
+  .cta-section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; }
+  .cta-section h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: .6rem; }
+  .cta-section > p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .87rem; color: var(--text-mid); max-width: 480px; margin: 0 auto 2rem; line-height: 1.6; }
+  .cta-final { display: inline-block; background: var(--navy); color: #ffffff; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .95rem; font-weight: 600; padding: 1rem 2.75rem; border-radius: 8px; }
+  .cta-note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .75rem; color: var(--text-light); margin-top: 1rem; }
+
+  /* FOOTER */
+  .footer { background: var(--navy); padding: 1.5rem; text-align: center; margin-top: 3rem; }
+  .footer p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .75rem; color: rgba(255,255,255,0.38); }
+  .footer p span { color: rgba(255,255,255,0.62); }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .findings-grid { grid-template-columns: 1fr; }
+    .service-body { grid-template-columns: 1fr; }
+    .service-col + .service-col { border-left: none; border-top: 1px solid var(--border); }
+    .synergy-row { grid-template-columns: 1fr; gap: .4rem; }
+    .syn-arrow { text-align: center; }
+    .offer-includes { grid-template-columns: 1fr; }
+    .bridge, .offer-block, .cta-section { padding: 1.5rem 1.25rem; }
+    .section { padding: 2rem 0; }
+    .header { padding: 2.5rem 1.25rem 2rem; }
+    .service-header { padding: 1.25rem; }
+    .service-col { padding: 1rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-brand">YM Marketing & Negócios</div>
+  <div class="header-tag">Proposta Estratégica · Maio 2026</div>
+  <h1>Bem Estar Podologia<br>Presença Digital Essencial</h1>
+  <p class="header-sub">Do diagnóstico à ação: estruturação da presença digital para atrair mais pacientes pelo Instagram e pelo Google.</p>
+  <div class="header-meta">
+    <div class="header-meta-item">Para: <span>Ana Marcia dos Santos</span></div>
+    <div class="header-meta-item">Segmento: <span>Podologia Clínica · Contagem, MG</span></div>
+    <div class="header-meta-item">Validade: <span>7 dias</span></div>
+  </div>
+</div>
+
+<!-- O QUE O RAIO-X MOSTROU -->
+<div class="bg-white">
+<div class="container">
+<div class="section">
+  <div class="section-label">Com base no Raio-X Estratégico</div>
+  <h2>O que o diagnóstico mostrou</h2>
+  <p class="section-intro">A análise identificou quatro pontos que explicam por que a captação ainda depende quase exclusivamente de indicação — e onde está o potencial real de crescimento.</p>
+
+  <div class="findings-grid">
+    <div class="finding-card">
+      <div class="fi-icon fi-amber">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <p><strong>Autoridade real que ainda não aparece.</strong> Com +26 anos de experiência e especializações recentes em Cosmetopodo e Podologia de Aço, Ana Marcia tem credenciais que o digital ainda não comunica com a força que merecem.</p>
+    </div>
+    <div class="finding-card">
+      <div class="fi-icon fi-amber">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <p><strong>Instagram subaproveitado.</strong> O perfil existe, mas bio, destaques e frequência ainda não comunicam experiência, serviços e diferenciais com clareza suficiente para gerar confiança em quem visita pela primeira vez.</p>
+    </div>
+    <div class="finding-card">
+      <div class="fi-icon fi-amber">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <p><strong>Google pouco explorado como canal.</strong> Perfil ativo com nota 4,3 e 11 avaliações, mas sem otimização local, palavras-chave ou estratégia de avaliações. Canal gratuito de captação completamente ocioso.</p>
+    </div>
+    <div class="finding-card">
+      <div class="fi-icon fi-green">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <p><strong>Captação dependente de indicação.</strong> Com presença digital estruturada, novos pacientes chegam por descoberta orgânica — não apenas por quem já conhece. Isso reduz fragilidade e abre a agenda para crescimento.</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- SOLUÇÃO RECOMENDADA -->
+<div class="bg-gray">
+<div class="container">
+<div class="section">
+  <div class="section-label">Solução recomendada</div>
+  <h2>O próximo passo mais estratégico</h2>
+  <p class="section-intro">Os dois canais com maior potencial de retorno imediato — que se complementam diretamente na jornada da nova paciente até o agendamento.</p>
+
+  <div class="bridge">
+    <p>A Ana Marcia tem a credencial. O que falta é que <em>o digital comunique isso com clareza e consistência</em>. Instagram e Google são os dois canais onde a nova paciente vai encontrar e avaliar — e hoje os dois estão bem abaixo do potencial real.</p>
+  </div>
+
+  <!-- SERVIÇO 1 -->
+  <div class="service-block">
+    <div class="service-header">
+      <div class="service-num">Serviço 01</div>
+      <h3>Instagram Profissional</h3>
+      <div class="service-hook">Perfil reestruturado para gerar confiança e direcionar ao agendamento</div>
+    </div>
+    <div class="service-body">
+      <div class="service-col">
+        <div class="service-col-label">O que será entregue</div>
+        <ul>
+          <li>Ajuste estratégico da bio</li>
+          <li>Organização e padronização dos destaques</li>
+          <li>Sugestão de posts fixados estratégicos</li>
+          <li>Direção visual inicial do perfil</li>
+          <li>Linha editorial com temas de autoridade e captação</li>
+          <li>Orientação de conteúdo para posicionamento técnico</li>
+          <li>CTA direcionado para agendamento via WhatsApp</li>
+        </ul>
+      </div>
+      <div class="service-col">
+        <div class="service-col-label">O que muda para o negócio</div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#15803d" stroke-width="1.5"/></svg></div>
+          <p>Perfil mais profissional desde o primeiro segundo de visita</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#15803d" stroke-width="1.5"/></svg></div>
+          <p>Os 26 anos de experiência e as especializações aparecem com clareza</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#15803d" stroke-width="1.5"/></svg></div>
+          <p>Mais confiança para a nova paciente decidir agendar</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#15803d" stroke-width="1.5"/></svg></div>
+          <p>Caminho claro do perfil até o contato pelo WhatsApp</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVIÇO 2 -->
+  <div class="service-block">
+    <div class="service-header">
+      <div class="service-num">Serviço 02</div>
+      <h3>Aparece no Google</h3>
+      <div class="service-hook">Google Meu Negócio otimizado para captar quem já busca podóloga em Contagem</div>
+    </div>
+    <div class="service-body">
+      <div class="service-col">
+        <div class="service-col-label">O que será entregue</div>
+        <ul>
+          <li>Otimização completa do Google Meu Negócio</li>
+          <li>Ajuste da descrição com palavras-chave locais</li>
+          <li>Organização de categorias e informações essenciais</li>
+          <li>Estratégia para aumentar e ativar avaliações</li>
+          <li>Orientação de postagens regulares no perfil</li>
+          <li>Direcionamento para buscas em Contagem e região</li>
+        </ul>
+      </div>
+      <div class="service-col">
+        <div class="service-col-label">O que muda para o negócio</div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#15803d" stroke-width="1.5"/></svg></div>
+          <p>Aparece para quem busca "podóloga em Contagem" no Google e Maps</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#15803d" stroke-width="1.5"/></svg></div>
+          <p>As 11 avaliações existentes passam a trabalhar a favor do negócio</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#15803d" stroke-width="1.5"/></svg></div>
+          <p>Canal gratuito de captação local ativado e estruturado</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#15803d" stroke-width="1.5"/></svg></div>
+          <p>Mais credibilidade e destaque nas buscas da região</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- POR QUE OS DOIS JUNTOS -->
+<div class="bg-white">
+<div class="container">
+<div class="section">
+  <div class="section-label">Por que os dois juntos</div>
+  <h2>Google descobre. Instagram convence. WhatsApp agenda.</h2>
+  <p class="section-intro">Cada canal tem um papel diferente na jornada da nova paciente — e os três precisam funcionar em sequência.</p>
+
+  <div class="synergy-row">
+    <div class="synergy-card">
+      <div class="syn-icon">&#128269;</div>
+      <h4>Google</h4>
+      <p>gera descoberta</p>
+    </div>
+    <div class="syn-arrow">&#8594;</div>
+    <div class="synergy-card">
+      <div class="syn-icon">&#128248;</div>
+      <h4>Instagram</h4>
+      <p>gera confiança</p>
+    </div>
+    <div class="syn-arrow">&#8594;</div>
+    <div class="synergy-card">
+      <div class="syn-icon">&#128172;</div>
+      <h4>WhatsApp</h4>
+      <p>gera agendamento</p>
+    </div>
+  </div>
+
+  <div class="synergy-insight">
+    <p>"Quando a paciente encontra a Ana Marcia no Google e depois confirma a autoridade no Instagram, a decisão de chamar no WhatsApp fica muito mais fácil. Os dois canais juntos criam um caminho natural de descoberta até o agendamento — sem depender de indicação."</p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- OFERTA -->
+<div class="bg-gray">
+<div class="container">
+<div class="section">
+  <div class="offer-block">
+    <div class="offer-tag">Oferta Recomendada</div>
+    <h2>Presença Digital Essencial<br>Instagram + Google juntos</h2>
+    <p>Contratando os dois serviços juntos, a Bem Estar Podologia recebe uma estrutura completa de presença digital inicial com 20% de desconto.</p>
+
+    <div class="price-display">
+      <div class="price-original sans">De R$ 1.050,00</div>
+      <div class="price-main">R$ 840<span style="font-size:1.2rem;opacity:.65">,00</span></div>
+      <div class="price-saving sans">&#10003; Economia de R$ 210,00</div>
+    </div>
+
+    <div class="offer-includes">
+      <div class="offer-inc-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7dd3b4" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Instagram Profissional completo
+      </div>
+      <div class="offer-inc-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7dd3b4" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Google Meu Negócio otimizado
+      </div>
+      <div class="offer-inc-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7dd3b4" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Linha editorial e orientação de conteúdo
+      </div>
+      <div class="offer-inc-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7dd3b4" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Estratégia de avaliações no Google
+      </div>
+      <div class="offer-inc-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7dd3b4" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        2 reuniões de alinhamento ao vivo
+      </div>
+      <div class="offer-inc-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7dd3b4" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Prazo de entrega: 7 a 10 dias úteis
+      </div>
+    </div>
+
+    <a href="https://wa.me/553175073862?text=Ol%C3%A1%2C%20quero%20aprovar%20a%20proposta%20Presen%C3%A7a%20Digital%20Essencial%20para%20o%20Bem%20Estar%20Podologia." class="cta-btn sans">Aprovar proposta pelo WhatsApp</a>
+    <div class="cta-sub sans">Proposta válida por 7 dias &nbsp;·&nbsp; Sem contrato de fidelidade</div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- RESULTADO ESPERADO -->
+<div class="bg-white">
+<div class="container">
+<div class="section">
+  <div class="section-label">Resultado esperado</div>
+  <h2>O que muda na prática</h2>
+  <p class="section-intro">Sem promessas exageradas. O que esse trabalho entrega de concreto para o negócio — na sequência certa.</p>
+
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="result-dot"></div>
+      <h4>Comunicação mais clara</h4>
+      <p>Os serviços, a experiência e os diferenciais da Ana Marcia passam a aparecer com muito mais clareza para quem visita o perfil pela primeira vez.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-dot"></div>
+      <h4>Presença mais profissional</h4>
+      <p>Instagram e Google trabalhando juntos passam mais credibilidade do que qualquer um dos dois separado — e bem mais do que o que existe hoje.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-dot"></div>
+      <h4>Google realmente trabalhando</h4>
+      <p>O perfil existente com 4,3 estrelas e 11 avaliações passa a trabalhar ativamente como canal de captação — não apenas existir.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-dot"></div>
+      <h4>Mais confiança para novas pacientes</h4>
+      <p>Quem não conhece a Ana Marcia por indicação passa a ter uma forma clara de avaliar, confiar e decidir antes de chamar no WhatsApp.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-dot"></div>
+      <h4>Base para crescimento orgânico</h4>
+      <p>Estrutura construída corretamente desde o início — muito mais fácil de evoluir depois do que corrigir o que foi feito errado ou improvisado.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-dot"></div>
+      <h4>Menos dependência de indicação</h4>
+      <p>Dois novos canais de descoberta ativos significam que a agenda não depende só de quem já é paciente ou conhece pessoalmente.</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="bg-gray">
+<div class="container">
+<div class="section">
+  <div class="cta-section">
+    <div class="section-label" style="margin-bottom:.6rem">Próximo passo</div>
+    <h2>Pronta para começar?</h2>
+    <p>A partir da aprovação, iniciamos a estruturação dos dois canais para transformar a autoridade que já existe no atendimento em presença digital clara, profissional e estratégica.</p>
+    <a href="https://wa.me/553175073862?text=Ol%C3%A1%2C%20quero%20aprovar%20a%20proposta%20Presen%C3%A7a%20Digital%20Essencial%20para%20o%20Bem%20Estar%20Podologia." class="cta-final sans">Aprovar proposta pelo WhatsApp</a>
+    <div class="cta-note">Dúvidas antes de aprovar? Chama no mesmo número. Respondo com prazer.</div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><span>YM Marketing & Negócios</span> &nbsp;·&nbsp; @ym_marketingenegocios &nbsp;·&nbsp; wa.me/553175073862</p>
+  <p style="margin-top:.35rem">Proposta elaborada com base no Raio-X Estratégico · Bem Estar Podologia · Maio de 2026</p>
+</div>
+
+</body>
+</html>
